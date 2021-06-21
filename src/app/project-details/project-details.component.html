@@ -1,0 +1,74 @@
+<div class="container">
+    <h2>View Project:</h2>
+    <div class="row">
+        <div class="column">Title:</div>
+        <div class="column">{{ project.title }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Start Date: </div>
+        <div class="column">{{ project.startDate}}</div>
+    </div>
+    <div class="row">
+        <div class="column">Commission:</div>
+        <div class="column">{{project.commission}}</div>
+    </div>
+    <div class="row">
+        <div class="column">Due Date:</div>
+        <div class="column">{{ project.dueDate }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Materials:</div>
+        <div class="column">{{ project.materials }}</div>
+    </div>
+    <div class="row">
+        <div class="column">On Hand Materials Cost:</div>
+        <div class="column">{{ project.onHandMaterialsCost }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Additional Materials Cost:</div>
+        <div class="column">{{ project.additionalMaterialsCost }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Estimated Materials Cost:</div>
+        <!-- <div class="column">{{ materialsCost() | currency }}</div> -->
+    </div>
+    <div class="row">
+        <div class="column">Hourly Rate:</div>
+        <div class="column">{{ project.hourlyRate }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Hours Logged:</div>
+        <div class="column">{{ project.hoursLogged }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Hourly Cost:</div>
+        <!-- <div class="column">{{ hourlyCost() | currency }}</div> -->
+    </div>
+    <div class="row">
+        <div class="column">Total Cost:</div>
+        <!-- <div class="column">{{ totalCost() | currency }}</div> -->
+    </div>
+    <div class="row">
+        <div class="column">Description:</div>
+        <div class="column">{{ project.description }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Commissioner:</div>
+        <div class="column">{{ project.commissioner }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Requirements:</div>
+        <div class="column">{{ project.requirements }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Notes:</div>
+        <div class="column">{{ project.notes }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Complete:</div>
+        <div class="column">{{ project.complete }}</div>
+    </div>
+    <div class="row">
+        <div class="column">Sold:</div>
+        <div class="column">{{ project.sold }}</div>
+    </div>
