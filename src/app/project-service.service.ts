@@ -4,15 +4,16 @@ import { Observable } from 'rxjs';
 import { Project } from './project';
 
 @Injectable(
-  {
-  providedIn: 'root'
-}
+//   {
+//   providedIn: 'root'
+// }
 )
 
 export class ProjectServiceService {
 
 
   constructor(private http: HttpClient) {   }
+  
   //POST
   addProject(project: Project){
     return this.http.post<Project>(`http://localhost:8080/passionproject/project`, project);
@@ -34,7 +35,7 @@ export class ProjectServiceService {
 
   //Delete by ID
   deleteProject(id: number): Observable<any>{
-    return this.http.delete<any>(`http://localhost:8080/passionproject/${id}`);
+    return this.http.delete<any>(`http://localhost:8080/passionproject/project/${id}`);
   }
 
 }

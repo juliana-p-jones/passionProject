@@ -1,0 +1,230 @@
+<div class="container">
+    <h1>Update Project:</h1>
+      <form (ngSubmit)="onSubmit()" #projectForm="ngForm">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            required #name ="ngModel"
+            [(ngModel)]="project.title"
+            name="title"
+          />
+        </div>
+    
+        <div class="form-group">
+          <label for="startDate">Start Date:</label>
+          <input
+            type="text"
+            class="form-control"
+            required #startDate ="ngModel"
+            [(ngModel)]="project.startDate"
+            name="startDate"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="startDate">Is this a Commission?</label>
+          <input
+            type="radio"
+            class="form-control"
+            id="yes"
+            value="true"
+            rrequired #commission ="ngModel"
+            [(ngModel)]="project.commission"
+            name="commission"
+          /> <label for="yes">Yes</label>
+          <input
+            type="radio"
+            class="form-control"
+            id="no"
+            value="false"
+            required #commission ="ngModel"
+            [(ngModel)]="project.commission"
+            name="commission"
+          /><label for="no">No</label>
+        </div>
+  
+        <div class="form-group">
+          <label for="dueDate"> Due Date:</label>
+          <input
+            type="text"
+            class="form-control"
+            required #dueDate ="ngModel"
+            [(ngModel)]="project.dueDate"
+            name="dueDate"
+          />
+        </div>
+        <!-- <mat-form-field appearance="fill">
+            <mat-label>Month and Year</mat-label>
+            <input matInput [matDatepicker]="dp" [formControl]="dueDate" required #dueDate ="ngModel"
+            [(ngModel)]="project.dueDate">
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker #dp
+                            startView="multi-year"
+                            (yearSelected)="chosenYearHandler($event)"
+                            (monthSelected)="chosenMonthHandler($event, dp)"
+                            panelClass="example-month-picker">
+            </mat-datepicker>
+          </mat-form-field> -->
+  
+        <div class="form-group">
+          <label for="materials"> Materials:</label>
+          <input
+          type="radio"
+          class="form-control"
+          id="yes"
+          value="true"
+          required #materials ="ngModel"
+          [(ngModel)]="project.materials"
+          name="materials"
+        /> <label for="yes">Yes</label>
+        <input
+          type="radio"
+          class="form-control"
+          id="no"
+          value="false"
+          required #materials ="ngModel"
+          [(ngModel)]="project.materials"
+          name="materials"
+        /><label for="no">No</label>
+        </div>
+  
+        <div class="form-group">
+          <label for="onHandMaterialsCost"> On Hand Materials Cost:</label>
+          <input
+            type="number"
+            class="form-control"
+            required #onHandMaterialsCost ="ngModel"
+            [(ngModel)]="project.onHandMaterialsCost"
+            name="onHandMaterialsCost"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="additionalMaterialsCost"> Additional Materials Cost:</label>
+          <input
+            type="number"
+            class="form-control"
+            required #additionalMaterialsCost ="ngModel"
+            [(ngModel)]="project.additionalMaterialsCost"
+            name="additionalMaterialsCost"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="hourlyRate"> Hourly Rate:</label>
+          <input
+            type="number"
+            class="form-control"
+            required #hourlyRate ="ngModel"
+            [(ngModel)]="project.hourlyRate"
+            name="hourlyRate"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="hoursLogged"> Hours Logged:</label>
+          <input
+            type="number"
+            class="form-control"
+            required #hoursLogged ="ngModel"
+            [(ngModel)]="project.hoursLogged"
+            name="hoursLogged"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input
+            type="text"
+            class="form-control"
+            required #description ="ngModel"
+            [(ngModel)]="project.description"
+            name="description"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="commissioner">Commissioner:</label>
+          <input
+            type="text"
+            class="form-control"
+            required #commissioner ="ngModel"
+            [(ngModel)]="project.commissioner"
+            name="commissioner"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="requirements">Requirements:</label>
+          <input
+            type="text"
+            class="form-control"
+            required #requirements ="ngModel"
+            [(ngModel)]="project.requirements"
+            name="requirements"
+            placeholder="project.requirements"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="notes">Notes:</label>
+          <input
+            type="text"
+            class="form-control"
+            required #notes ="ngModel"
+            [(ngModel)]="project.notes"
+            name="notes"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="complete"> Complete</label>
+          <input
+          type="radio"
+          class="form-control"
+          id="yes"
+          value="true"
+          required #complete ="ngModel"
+          [(ngModel)]="project.complete"
+          name="complete"
+        /> <label for="yes">Yes</label>
+        <input
+          type="radio"
+          class="form-control"
+          id="no"
+          value="false"
+          required #complete ="ngModel"
+          [(ngModel)]="project.complete"
+          name="complete"
+        /><label for="no">No</label>
+        </div>
+  
+        <div class="form-group">
+          <label for="sold"> Sold:</label>
+          <input
+          type="radio"
+          class="form-control"
+          id="yes"
+          value="true"
+          required #sold ="ngModel"
+          [(ngModel)]="project.sold"
+          name="sold"
+        /> <label for="yes">Yes</label>
+        <input
+          type="radio"
+          class="form-control"
+          id="no"
+          value="false"
+          required #sold ="ngModel"
+          [(ngModel)]="project.sold"
+          name="sold"
+        /><label for="no">No</label>
+        </div>
+    
+        <button type="submit" class="btn btn-success" [disabled]="!projectForm.form.valid">Submit Update</button>
+        <button class="btn btn-primary" (click)="backButton()">Back</button>
+
+      </form>
+    </div>

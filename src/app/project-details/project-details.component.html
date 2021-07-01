@@ -1,74 +1,80 @@
 <div class="container">
     <h2>View Project:</h2>
     <div class="row">
-        <div class="column">Title:</div>
-        <div class="column">{{ project.title }}</div>
+        <div class="column" id="field">Title:</div>
+        <div class="column" id="values">{{ project.title }}</div>
     </div>
     <div class="row">
-        <div class="column">Start Date: </div>
-        <div class="column">{{ project.startDate}}</div>
+        <div class="column"id="field">Start Date: </div>
+        <div class="column"id="values">{{ project.startDate}}</div>
     </div>
     <div class="row">
-        <div class="column">Commission:</div>
-        <div class="column">{{project.commission}}</div>
+        <div class="column"id="field">Commission:</div>
+        <div class="column"id="values">{{project.commission}}</div>
     </div>
     <div class="row">
-        <div class="column">Due Date:</div>
-        <div class="column">{{ project.dueDate }}</div>
+        <div class="column"id="field">Due Date:</div>
+        <div class="column"id="values">{{ project.dueDate }}</div>
     </div>
     <div class="row">
-        <div class="column">Materials:</div>
-        <div class="column">{{ project.materials }}</div>
+        <div class="column"id="field">Materials:</div>
+        <div class="column"id="values">{{ project.materials }}</div>
     </div>
     <div class="row">
-        <div class="column">On Hand Materials Cost:</div>
-        <div class="column">{{ project.onHandMaterialsCost }}</div>
+        <div class="column"id="field">On Hand Materials Cost:</div>
+        <div class="column"id="values">{{ project.onHandMaterialsCost | currency}}</div>
     </div>
     <div class="row">
-        <div class="column">Additional Materials Cost:</div>
-        <div class="column">{{ project.additionalMaterialsCost }}</div>
+        <div class="column"id="field">Additional Materials Cost:</div>
+        <div class="column"id="values">{{ project.additionalMaterialsCost | currency}}</div>
     </div>
     <div class="row">
-        <div class="column">Estimated Materials Cost:</div>
-        <!-- <div class="column">{{ materialsCost() | currency }}</div> -->
+        <div class="column"id="field">Estimated Materials Cost:</div>
+        <div class="column"id="values">{{ materialsCost() | currency }}</div>
     </div>
     <div class="row">
-        <div class="column">Hourly Rate:</div>
-        <div class="column">{{ project.hourlyRate }}</div>
+        <div class="column"id="field">Hourly Rate:</div>
+        <div class="column"id="values">{{ project.hourlyRate | currency}}</div>
     </div>
     <div class="row">
-        <div class="column">Hours Logged:</div>
-        <div class="column">{{ project.hoursLogged }}</div>
+        <div class="column"id="field">Hours Logged:</div>
+        <div class="column"id="values">{{ project.hoursLogged }}</div>
     </div>
     <div class="row">
-        <div class="column">Hourly Cost:</div>
-        <!-- <div class="column">{{ hourlyCost() | currency }}</div> -->
+        <div class="column"id="field">Hourly Cost:</div>
+        <div class="column"id="values">{{ hourlyCost() | currency }}</div>
     </div>
     <div class="row">
-        <div class="column">Total Cost:</div>
-        <!-- <div class="column">{{ totalCost() | currency }}</div> -->
+        <div class="column"id="field">Total Cost:</div>
+        <div class="column"id="values">{{ totalCost() | currency }}</div>
     </div>
     <div class="row">
-        <div class="column">Description:</div>
-        <div class="column">{{ project.description }}</div>
+        <div class="column"id="field">Description:</div>
+        <div class="column"id="values">{{ project.description }}</div>
     </div>
     <div class="row">
-        <div class="column">Commissioner:</div>
-        <div class="column">{{ project.commissioner }}</div>
+        <div class="column"id="field">Commissioner:</div>
+        <div class="column"id="values">{{ project.commissioner }}</div>
     </div>
     <div class="row">
-        <div class="column">Requirements:</div>
-        <div class="column">{{ project.requirements }}</div>
+        <div class="column"id="field">Requirements:</div>
+        <div class="column"id="values">{{ project.requirements }}</div>
     </div>
     <div class="row">
-        <div class="column">Notes:</div>
-        <div class="column">{{ project.notes }}</div>
+        <div class="column"id="field">Notes:</div>
+        <div class="column"id="values">{{ project.notes }}</div>
     </div>
     <div class="row">
-        <div class="column">Complete:</div>
-        <div class="column">{{ project.complete }}</div>
+        <div class="column"id="field">Complete:</div>
+        <div class="column"id="values">{{ project.complete }}</div>
     </div>
     <div class="row">
-        <div class="column">Sold:</div>
-        <div class="column">{{ project.sold }}</div>
+        <div class="column"id="field">Sold:</div>
+        <div class="column"id="values">{{ project.sold }}</div>
+    </div>
+    <div>
+        <button class="btn btn-primary" (click)="updateProject(project.id)">Update Project</button>
+    </div>
+    <div><button class="btn btn-danger" (click)="deleteProjectButton(project.id)">Delete Project</button></div>
+    <div><button class="btn btn-primary" (click)="backButton()">Back</button>
     </div>

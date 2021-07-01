@@ -24,14 +24,18 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ProjectServiceService } from './project-service.service';
+import { UpdateProjectComponent } from './update-project/update-project.component';
+import {MatRippleModule} from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     NewProjectComponent,
     ProjectsComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    UpdateProjectComponent
   ],
   imports: [
     RouterModule.forRoot([
@@ -57,9 +61,11 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    FormsModule
-  ],
-  providers: [],
+    FormsModule,
+    HttpClientModule,
+    MatRippleModule
+    ],
+  providers: [ProjectServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

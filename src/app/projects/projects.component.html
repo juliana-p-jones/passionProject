@@ -1,18 +1,11 @@
-<!-- <mat-card>Project Title: {{ project.title }}
-    <mat-card-subtitle>Details:</mat-card-subtitle>
-    <mat-card-content>{{ project.description}}</mat-card-content>
-    <button class="btn btn-primary" (click)="viewProject(project.id)">View Details</button>
-    <mat-card-actions routerLink="/app-project-details">View Project Details</mat-card-actions>
-</mat-card> -->
-TEST
-
- <h1>Project List Directory</h1>
+ <h1 id="header">My Projects:</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Project Title</th>
-      <th scope="col">Description</th>
+      <th scope="col">Project Title:</th>
+      <th scope="col">Description:</th>
+      <th scope="col">Details:</th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +16,10 @@ TEST
     </tr>
   </tbody>
 </table>
-<div>
-    <button type="button" class="btn btn-success" (click)="addProjectButton()">Add Project</button>
+<div>     
+    <button type="button" class="btn btn-primary" (click)="addProjectButton()">
+     Add Project
+    </button>
+
   </div>
 

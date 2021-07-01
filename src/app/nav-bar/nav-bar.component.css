@@ -16,7 +16,17 @@
   z-index: 1;
 }
 #header{
+  margin-top:5%;
   display: flex;
   align-content: center;
   justify-content: center;
+  padding: 5% 0% 0% 5%;
+}
+.mat-drawer-inner-container{
+  background-color: rgb(80, 84, 121);
+  color: aliceblue;
+}
+.mat-drawer-content{
+  background: rgb(8, 17, 31);
+  color: white;
 }

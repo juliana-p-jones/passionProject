@@ -1,0 +1,41 @@
+#field, #values, .column, .row, .container{
+    display: flex;
+    flex-direction: column;
+    align-content:stretch;
+    color: white;
+}
+#field{
+    font-weight: bold;
+    margin-left: 2%;
+}
+.column{
+    display:flex;
+    align-content:flex-start;
+}
+#values{
+    margin-left:3.5%;
+    border: rgb(45, 45, 45) 1px solid;
+    background-color: rgb(255, 255, 255);
+    color: grey;
+    border-radius: 5px;
+    padding: 3px 20% 1px 3px;
+    margin-bottom: 2%;;
+    max-width: 45%;
+    flex-wrap: wrap;
+}
+.row{
+    background-color: rgb(74, 72, 87);
+    max-width:40%;
+    border: grey solid 1px;
+    border-radius: 5%;
+}
+.btn{
+    margin:1%;
+}
+.container{
+    background-color: rgb(8, 17, 31);
+}
+.th, .td{
+    color: white;
+}
+

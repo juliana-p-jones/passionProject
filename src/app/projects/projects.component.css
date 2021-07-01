@@ -1,0 +1,28 @@
+.h1, .th, .td, .table{
+    color: white;
+    max-width: 90%;
+    align-content: center;
+    margin-left: 5%;
+}
+#header{
+    padding-left: 5%;
+    margin-top:5%;
+}
+
+.btn{
+    color: rgb(255, 255, 255);
+    border: white solid;
+    background: transparent;
+    margin-left: 5%;
+    /* margin-right: 5%; */
+}
+.table{
+    justify-content: center;
+    align-content: center;
+}
+.table thead th{
+    background-color: rgb(86, 86, 112);
+}
+.btn[_ngcontent-the-c65]{
+    margin-left:5%;
+}

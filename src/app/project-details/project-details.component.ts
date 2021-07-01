@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from '../project';
 import { ProjectServiceService } from '../project-service.service';
 
@@ -9,21 +9,48 @@ import { ProjectServiceService } from '../project-service.service';
   styleUrls: ['./project-details.component.css']
 })
 export class ProjectDetailsComponent implements OnInit {
-project = new Project();
+  project = new Project();
+  
 
-  constructor() { }
-  // constructor(private data:ProjectServiceService, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private router: Router,
+    private projectService: ProjectServiceService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // const id = this.activatedRoute.snapshot.params[`id`];
-    // this.data.fetchProjectById(id).subscribe(
-    //   response =>{
-    //       this.project = response;
-    //   },
-    //   error => console.log(error)
-    // );
+    const id = this.activatedRoute.snapshot.params[`id`];
+    this.projectService.fetchProjectById(id).subscribe(
+      response => {
+        this.project = response;
+      },
+      error => console.log(error)
+    );
+  }
+  materialsCost(): number {
+    let sum = this.project.onHandMaterialsCost + this.project.additionalMaterialsCost;
+    return sum;
+  }
+  hourlyCost(): number {
+    let sum = this.project.hourlyRate * this.project.hoursLogged;
+    return sum;
+  }
+  totalCost(): number {
+    let sum = this.hourlyCost() + this.materialsCost();
+    return sum;
   }
 
-
+  updateProject(id: number) {
+    this.router.navigate(['update-project', id]);
+  }
+  backButton() {
+    this.router.navigate(['projects'])
+  }
+  deleteProjectButton(id: number) {
+    this.projectService.deleteProject(id).subscribe(
+      response => {
+        this.backButton();
+      }
+    );
+  }
 
 }
