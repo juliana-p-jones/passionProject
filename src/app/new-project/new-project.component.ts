@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from '../project';
 import { ProjectServiceService } from '../project-service.service';
@@ -10,6 +11,8 @@ import { ProjectServiceService } from '../project-service.service';
 })
 export class NewProjectComponent {
   project: Project;
+  projectform!: FormGroup;
+  commission!: FormGroup;
 
 constructor(
   private route: ActivatedRoute,
@@ -34,4 +37,25 @@ constructor(
 // else 
 //   return false;
 //   };
+ngOnInit() {
+  this.projectform = new FormGroup({
+    title: new FormControl('', Validators.required),
+    startDate: new FormControl('', Validators.required),
+    dueDate: new FormControl('', Validators.required),
+    materials: new FormControl('', Validators.required),
+    materialsCost: new FormControl('', Validators.required),
+    hourlyRate: new FormControl('', Validators.required),
+    hoursLogged: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required),
+    notes: new FormControl('', Validators.required),
+    completion: new FormControl('', Validators.required),
+    sold: new FormControl('', Validators.required),
+    commission: new FormGroup({
+    commission: new FormControl('', Validators.required),
+    commissioner:  new FormControl('', Validators.required), 
+    requirements: new FormControl('', Validators.required),
+    commissionType: new FormControl('', Validators.required)
+  }),
+  });
+}
 }

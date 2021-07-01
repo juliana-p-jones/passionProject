@@ -1,3 +1,5 @@
+import { Commission } from "./commission";
+
 export class Project {
     id!: number;
     title!: string;
@@ -9,7 +11,7 @@ export class Project {
     hoursLogged!: number;
     description!: string;
     notes!: string;
-    complete!: boolean;
+    completion!: string;
     sold!: boolean;
     commission!: Commission;
 }

@@ -9,10 +9,6 @@
         <div class="column"id="values">{{ project.startDate}}</div>
     </div>
     <div class="row">
-        <div class="column"id="field">Commission:</div>
-        <div class="column"id="values">{{project.commission}}</div>
-    </div>
-    <div class="row">
         <div class="column"id="field">Due Date:</div>
         <div class="column"id="values">{{ project.dueDate }}</div>
     </div>
@@ -21,16 +17,8 @@
         <div class="column"id="values">{{ project.materials }}</div>
     </div>
     <div class="row">
-        <div class="column"id="field">On Hand Materials Cost:</div>
-        <div class="column"id="values">{{ project.onHandMaterialsCost | currency}}</div>
-    </div>
-    <div class="row">
-        <div class="column"id="field">Additional Materials Cost:</div>
-        <div class="column"id="values">{{ project.additionalMaterialsCost | currency}}</div>
-    </div>
-    <div class="row">
         <div class="column"id="field">Estimated Materials Cost:</div>
-        <div class="column"id="values">{{ materialsCost() | currency }}</div>
+        <div class="column"id="values">{{ project.materialsCost | currency}}</div>
     </div>
     <div class="row">
         <div class="column"id="field">Hourly Rate:</div>
@@ -53,26 +41,36 @@
         <div class="column"id="values">{{ project.description }}</div>
     </div>
     <div class="row">
-        <div class="column"id="field">Commissioner:</div>
-        <div class="column"id="values">{{ project.commissioner }}</div>
-    </div>
-    <div class="row">
-        <div class="column"id="field">Requirements:</div>
-        <div class="column"id="values">{{ project.requirements }}</div>
-    </div>
-    <div class="row">
         <div class="column"id="field">Notes:</div>
         <div class="column"id="values">{{ project.notes }}</div>
     </div>
     <div class="row">
         <div class="column"id="field">Complete:</div>
-        <div class="column"id="values">{{ project.complete }}</div>
+        <div class="column"id="values">{{ project.completion }}</div>
     </div>
     <div class="row">
         <div class="column"id="field">Sold:</div>
         <div class="column"id="values">{{ project.sold }}</div>
     </div>
     <div>
+
+        <!-- <div class="row">
+            <div class="column"id="field">Commission:</div>
+            <div class="column"id="values">{{project.commission}}</div>
+        </div>
+        <div class="row">
+            <div class="column"id="field">Commission Type:</div>
+            <div class="column"id="values">{{project.commissionType}}</div>
+        </div>
+        <div class="row">
+            <div class="column"id="field">Commissioner:</div>
+            <div class="column"id="values">{{ project.commissioner }}</div>
+        </div>
+        <div class="row">
+            <div class="column"id="field">Requirements:</div>
+            <div class="column"id="values">{{ project.requirements }}</div>
+        </div> -->
+
         <button class="btn btn-primary" (click)="updateProject(project.id)">Update Project</button>
     </div>
     <div><button class="btn btn-danger" (click)="deleteProjectButton(project.id)">Delete Project</button></div>

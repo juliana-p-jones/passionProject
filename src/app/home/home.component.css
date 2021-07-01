@@ -1,0 +1,28 @@
+#slogan{
+    font-size: .5rem;
+}
+#instructions, #body{
+        padding-top:7%;
+        padding-left:2%;
+        font-size:4em;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        padding-bottom: 10%;
+}
+#instructionBody{
+    padding-top: 5%;
+    padding-bottom: 15%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* font-size: 200%; */
+
+    
+}
+#btn{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 10%
+}

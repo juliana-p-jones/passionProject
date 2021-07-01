@@ -28,6 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProjectServiceService } from './project-service.service';
 import { UpdateProjectComponent } from './update-project/update-project.component';
 import {MatRippleModule} from '@angular/material/core';
+import { HomeComponent } from './home/home.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,12 +38,15 @@ import {MatRippleModule} from '@angular/material/core';
     NewProjectComponent,
     ProjectsComponent,
     ProjectDetailsComponent,
-    UpdateProjectComponent
+    UpdateProjectComponent,
+    HomeComponent
   ],
   imports: [
     RouterModule.forRoot([
       {path: 'app-project-details', component: ProjectDetailsComponent},
       {path: 'app-new-project', component: NewProjectComponent},
+      {path: 'app-home', component: HomeComponent},
+      {path: '', redirectTo: 'app-home', pathMatch: 'full'},
       {path: 'app-projects', component: ProjectsComponent}
     ]),
     BrowserModule,

@@ -7,6 +7,8 @@
     <mat-nav-list>
       <a mat-list-item href="#" routerLink="/projects">Projects</a>
       <a mat-list-item href="#" routerLink="/new-project">New Project</a>
+      <a mat-list-item href="#" routerLink="/about">About</a>
+
       <!-- <a mat-list-item href="#">Tips</a> -->
     </mat-nav-list>
   </mat-sidenav>
@@ -20,7 +22,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>my project pal</span>
+      <span id="head">my project pal <img class="img-responsive" src="assets/lightbulb_white.png"> <div id="slogan">One place to manage all your projects.</div></span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <div id="header">

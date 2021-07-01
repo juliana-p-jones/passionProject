@@ -30,3 +30,16 @@
   background: rgb(8, 17, 31);
   color: white;
 }
+.img-responsive{
+  max-width: 5%;
+}
+#slogan{
+  font-size: .8rem;
+  align-content: flex-end;
+  padding-left:50%;
+  font-style: italic;
+}
+#head{
+  display:flex;
+  align-items: center;
+}

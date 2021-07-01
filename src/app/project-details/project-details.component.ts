@@ -26,16 +26,13 @@ export class ProjectDetailsComponent implements OnInit {
       error => console.log(error)
     );
   }
-  materialsCost(): number {
-    let sum = this.project.onHandMaterialsCost + this.project.additionalMaterialsCost;
-    return sum;
-  }
+
   hourlyCost(): number {
     let sum = this.project.hourlyRate * this.project.hoursLogged;
     return sum;
   }
   totalCost(): number {
-    let sum = this.hourlyCost() + this.materialsCost();
+    let sum = this.hourlyCost() + this.project.materialsCost;
     return sum;
   }
 

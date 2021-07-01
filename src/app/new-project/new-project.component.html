@@ -101,58 +101,71 @@
         <input
           type="text"
           class="form-control"
-          required #name ="ngModel"
-          [(ngModel)]="project.title"
-          name="title"
+          required #commission ="ngModel"
+           [(ngModel)]="project.title"
+            name="title"
         />
       </div>
-  
+      <div formGroupName="commission" class= "form-group">
+        <div class="form-group"id="radioButtons">
+          <label for="commission">Is this a Commission?</label>
+          <input
+            type="radio"
+            class="form-control"
+            id="yes"
+            value="true"
+            required #commission ="ngModel"
+            [(ngModel)]="project.commission"
+            name="commission"
+            ng-model="check1"
+          /> <label for="yes">Yes</label>
+          <input
+            type="radio"
+            class="form-control"
+            id="no"
+            value="false"
+            required #commission ="ngModel"
+            [(ngModel)]="project.commission"
+            name="commission"
+            ng-model="check2"
+          /><label for="no">No</label>
+        </div>
+        <div class="form-group" >
+        <!-- *ngIf="project.commission !== false" -->
+        
+        <label>Type of Commission:</label>
+        <input type="text" class="form-control" formControlName="commissionType" required/>
+      </div>
       <div class="form-group">
-        <label for="startDate">Start Date:</label>
-        <input
-          type="text"
-          class="form-control"
-          required #startDate ="ngModel"
-          [(ngModel)]="project.startDate"
-          name="startDate"
-        />
-      </div>
-
-      <div class="form-group"id="radioButtons">
-        <label for="startDate">Is this a Commission?</label>
-        <input
-          type="radio"
-          class="form-control"
-          id="yes"
-          value="true"
-          required #commission ="ngModel"
-          [(ngModel)]="project.commission"
-          name="commission"
-          ng-model="check1"
-        /> <label for="yes">Yes</label>
-        <input
-          type="radio"
-          class="form-control"
-          id="no"
-          value="false"
-          required #commission ="ngModel"
-          [(ngModel)]="project.commission"
-          name="commission"
-          ng-model="check2"
-        /><label for="no">No</label>
-      </div>
-
-      <div class="form-group" ng-show="check1" ng-hide="check2">
         <label for="commissioner">Commissioner:</label>
         <input
           type="text"
           class="form-control"
-          #commissioner ="ngModel"
-          [(ngModel)]="project.commissioner"
-          name="commissioner"
+          formControlName="commissioner" required
         />
       </div>
-
+      <div class="form-group">
+        <!-- <p *ngIf="project.commission == true" >  -->
+        <label for="requirements">Requirements:</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="requirements" required
+        />
+      <!-- </p> -->
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="startDate"> Start Date:</label>
+        
+        <input
+          type="text"
+          class="form-control"
+          required #dueDate ="ngModel"
+          [(ngModel)]="project.startDate"
+          name="startDate"
+        />
+      </div>
       <div class="form-group">
         <label for="dueDate"> Due Date:</label>
         <input
@@ -187,24 +200,13 @@
       </div>
 
       <div class="form-group">
-        <label for="onHandMaterialsCost">On Hand Materials Cost:</label>
+        <label for="materialsCost">Materials Cost:</label>
         <input
           type="number"
           class="form-control"
           required #onHandMaterialsCost ="ngModel"
-          [(ngModel)]="project.onHandMaterialsCost"
-          name="onHandMaterialsCost"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="additionalMaterialsCost">Additional Materials Cost:</label>
-        <input
-          type="number"
-          class="form-control"
-          required #additionalMaterialsCost ="ngModel"
-          [(ngModel)]="project.additionalMaterialsCost"
-          name="additionalMaterialsCost"
+          [(ngModel)]="project.materialsCost"
+          name="materialsCost"
         />
       </div>
 
@@ -242,17 +244,6 @@
       </div>
 
       <div class="form-group">
-        <label for="requirements">Requirements:</label>
-        <input
-          type="text"
-          class="form-control"
-          required #requirements ="ngModel"
-          [(ngModel)]="project.requirements"
-          name="requirements"
-        />
-      </div>
-
-      <div class="form-group">
         <label for="notes">Notes:</label>
         <input
           type="text"
@@ -262,28 +253,17 @@
           name="notes"
         />
       </div>
-
-      <div class="form-group"id="radioButtons">
-        <label for="complete">Status:</label>
+      <div class="form-group">
+        <label for="completion">Status:</label>
         <input
-        type="radio"
-        class="form-control"
-        id="yes"
-        value="true"
-        required #complete ="ngModel"
-        [(ngModel)]="project.complete"
-        name="complete"
-      /> <label for="yes">Complete</label>
-      <input
-        type="radio"
-        class="form-control"
-        id="no"
-        value="false"
-        required #complete ="ngModel"
-        [(ngModel)]="project.complete"
-        name="complete"
-      /><label for="no">WIP</label>
+          type="text"
+          class="form-control"
+          required #notes ="ngModel"
+          [(ngModel)]="project.completion"
+          name="completion"
+        />
       </div>
+
 
       <div class="form-group" id="radioButtons">
         <label for="sold"> Sold:</label>
