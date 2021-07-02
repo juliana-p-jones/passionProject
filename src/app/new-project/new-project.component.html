@@ -1,98 +1,3 @@
-<!-- <h1>Add a New Project:</h1>
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>New Project:</mat-card-title>
-  </mat-card-header>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Title:</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Start Date:</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Commission?</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Due Date:</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Materials?</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>On Hand Materials Cost:</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Additional Materials Cost</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Hourly Rate</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Hours Logged</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Description</mat-label>
-    <textarea matInput></textarea>  
-</mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Commissioner</mat-label>
-    <input matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Requirements</mat-label>
-    <textarea matInput></textarea>  
-</mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Notes</mat-label>
-    <textarea matInput></textarea>  
-</mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Complete?</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  <mat-form-field appearance="fill">
-    <mat-label>Sold?</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-</mat-card> -->
-
  <div class="container">
   <h1>New Project:</h1>
     <form (ngSubmit)="onSubmit()" #projectForm="ngForm">
@@ -286,10 +191,17 @@
         name="sold"
       /><label for="no">No</label>
       </div>
-  
-      <button type="submit" class="btn btn-success">Submit</button>
+      <div class="col-12" id= "submit">
+      <button type="submit" id ="submitbutton" class="btn btn-success">Submit</button>
       <!-- [disabled]="!projectForm.form.valid" -->
+      </div>
     </form>
-    <div><button class="btn btn-primary" (click)="backButton()">Back</button>
+    <div class="col-12" id="back">
 
+    <button class="btn btn-primary" id="backbutton" (click)="backButton()">Back</button>
   </div>
+  <div id="message" *ngIf="validMessage != ''">
+    <h3 class="has-info">{{validMessage}}</h3>
+  </div>
+  </div>
+ 

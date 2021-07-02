@@ -14,6 +14,7 @@
 
 label{
     margin-right: 3%;
+    margin-top:4%;
 }
 .btn{
     color: rgb(255, 255, 255);
@@ -27,4 +28,28 @@ label{
 }
 .input{
     color: grey;
+}
+.btn{
+    padding: .8rem 2rem;
+    font-size: 1.rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    max-width: 50%;
+}
+#submit, #back{
+    align-content: center;
+    display:flex;
+    flex-direction: column;
+}
+#submitbutton{
+background-color: mediumseagreen;
+}
+#backbutton{
+    background-color: red;
+}
+#message{
+    margin-top:2%;
+   margin-left:4%;
+
 }

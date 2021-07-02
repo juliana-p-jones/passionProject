@@ -13,6 +13,7 @@ export class NewProjectComponent {
   project: Project;
   projectform!: FormGroup;
   commission!: FormGroup;
+  validMessage: string ="";
 
 constructor(
   private route: ActivatedRoute,

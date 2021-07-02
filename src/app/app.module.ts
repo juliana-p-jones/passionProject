@@ -29,6 +29,7 @@ import { ProjectServiceService } from './project-service.service';
 import { UpdateProjectComponent } from './update-project/update-project.component';
 import {MatRippleModule} from '@angular/material/core';
 import { HomeComponent } from './home/home.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { HomeComponent } from './home/home.component';
     ProjectsComponent,
     ProjectDetailsComponent,
     UpdateProjectComponent,
-    HomeComponent
+    HomeComponent,
+    ImageUploadComponent,
   ],
   imports: [
     RouterModule.forRoot([

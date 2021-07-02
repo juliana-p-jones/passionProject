@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { UpdateProjectComponent } from './update-project/update-project.component';
 
 const routes: Routes = [
+  {path:'app-image-upload', component:ImageUploadComponent},
   {path:'projects', component:ProjectsComponent},
   {path:'new-project', component:NewProjectComponent},
   {path:'project-details/:id', component:ProjectDetailsComponent},
