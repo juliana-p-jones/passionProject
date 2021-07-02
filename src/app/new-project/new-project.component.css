@@ -18,8 +18,8 @@ label{
 }
 .btn{
     color: rgb(255, 255, 255);
-    border: white solid;
-    background: transparent;
+    /* border: white solid;
+    background: transparent; */
     margin-top:5%;
 }
 .button{
@@ -43,10 +43,9 @@ label{
     flex-direction: column;
 }
 #submitbutton{
-background-color: mediumseagreen;
 }
 #backbutton{
-    background-color: red;
+    background-color: rgb(203, 58, 58);
 }
 #message{
     margin-top:2%;
@@ -54,5 +53,10 @@ background-color: mediumseagreen;
 
 }
 #commissionFields{
-    color:yellow;
+    color:rgb(213, 27, 213);
+}
+#bottomButtons{
+    display:flex;
+    align-content: center;
+    justify-content: center;
 }

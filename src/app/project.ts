@@ -14,4 +14,5 @@ export class Project {
     completion!: string;
     sold!: boolean;
     commission!: Commission;
+    // photo!: string;
 }

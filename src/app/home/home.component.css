@@ -8,10 +8,10 @@
         display: flex;
         align-content: center;
         justify-content: center;
-        padding-bottom: 10%;
+        padding-bottom: 8%;
 }
 #instructionBody{
-    padding-top: 1%;
+    padding-top: 2%;
     padding-bottom: 1%;
     display: flex;
     align-content: center;
@@ -38,6 +38,7 @@
     justify-content: center;
     flex-wrap: wrap;
     padding-bottom: 9%;
+    padding-top:5%;
 }
 .img-responsive{
     max-width: 10%;
@@ -47,4 +48,11 @@
     display:flex;
     align-content: center;
     justify-content: center;
+}
+#instructions{
+    background-color: rgb(213, 27, 213);
+    margin-top:2%;
+}
+#body{
+    margin-top:3%;
 }

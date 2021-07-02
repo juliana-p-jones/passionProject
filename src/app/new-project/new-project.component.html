@@ -215,17 +215,26 @@
         formControlName="sold"
       /><label>No</label>
       </div>
+      <div id="bottomButtons" class="row">
+        <div class="col-12">
+      <app-image-upload></app-image-upload>
+    </div>
       <div class="col-12" id= "submit">
-      <button type="submit" id ="submitbutton" class="btn btn-success">Submit</button>
-      <!-- [disabled]="!projectForm.form.valid" -->
+      <button type="submit" id ="submitbutton" class="btn btn-primary">Submit</button>
       </div>
-    </form>
-    <div class="col-12" id="back">
 
-    <button class="btn btn-primary" id="backbutton" (click)="backButton()">Back</button>
-  </div>
-  <div id="message" *ngIf="validMessage != ''">
-    <h3 class="has-info">{{validMessage}}</h3>
-  </div>
-  </div>
+      <div class="col-12" id="back">
+        <button class="btn btn-primary" id="backbutton" (click)="backButton()">Back</button>
+      </div>
+      <div id="message" *ngIf="validMessage != ''">
+        <h3 class="has-info">{{validMessage}}</h3>
+      </div>
+      </div>
+      <!-- <div id="pics">
+        <img src="{{project.photo}}.jpg" class="img-responsive">
+    </div> -->
+
+    </form>
+ 
+</div>
  

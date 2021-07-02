@@ -34,6 +34,7 @@ constructor(
       notes: new FormControl('', Validators.required),
       completion: new FormControl('', Validators.required),
       sold: new FormControl('', Validators.required),
+      // photo: new FormControl(''),
 
       commission: new FormGroup({
       commission: new FormControl(''),
