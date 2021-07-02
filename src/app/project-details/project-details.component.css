@@ -4,9 +4,10 @@
     align-content:stretch;
     color: white;
 }
-#field{
+#field {
     font-weight: bold;
-    margin-left: 2%;
+    margin-left: 1%;
+    font-size: 2rem;
 }
 .column{
     display:flex;
@@ -20,14 +21,18 @@
     border-radius: 5px;
     padding: 3px 20% 1px 3px;
     margin-bottom: 2%;;
-    max-width: 45%;
+    max-width: 70%;
     flex-wrap: wrap;
+    margin-top:8%;
 }
 .row{
     background-color: rgb(74, 72, 87);
-    max-width:40%;
-    border: grey solid 1px;
+    max-width:35%;
+    border: solid 1px;
     /* border-radius: 5%; */
+    display:flex;
+    padding-top:2%;
+    padding-bottom:4%;
 }
 .btn{
     margin:1%;
@@ -38,4 +43,18 @@
 .th, .td{
     color: white;
 }
-
+#commissionFields .row{
+    background-color: rgb(255, 183, 0)!important;
+}
+#dates .row{
+    background-color: royalblue;
+}
+#costs .row{
+    background-color: rgb(255, 104, 87);
+}
+#titleInfo .row{
+    background-color: rgb(213, 27, 213);
+}
+#status .row{
+    background-color: rgb(36, 158, 115);
+}

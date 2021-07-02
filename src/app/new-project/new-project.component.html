@@ -1,16 +1,16 @@
  <div class="container">
   <h1>New Project:</h1>
-  <form (ngSubmit)="onSubmit()" #projectForm="ngForm">
+
+  <form [formGroup]="projectform" (ngSubmit)="submitRegistration()" novalidate>    
+    
     <div class="form-group">
-      <label for="title">Title:</label>
+      <label>Title:</label>
       <input
         type="text"
         class="form-control"
-        required #commission ="ngModel"
-         [(ngModel)]="project.title"
-          name="title"
+         formControlName="title"
           placeholder="Name of project"
-
+          required
       />
     </div>
     <div formGroupName="commission" class= "form-group">
@@ -19,22 +19,32 @@
         <input
           type="radio"
           class="form-control"
-          id="yes"
-          value="true"
+          ng-true-value="'Yes'"
+          
           formControlName="commission"
-        /> <label for="yes">Yes</label>
+          (click)="showCommission()"
+
+        /> <label>Yes</label>
         <input
           type="radio"
           class="form-control"
-          id="no"
-          value="false"
-          formControlName="commission"
-        /><label for="no">No</label>
+          ng-false-value="'No"
+        
+          formControlName="commission" 
+          (click)="collapseCommission()"
+          value="null"
+        /><label>No</label>
       </div>
+
+
+      <div id="commissionFields">
     <div class="form-group">
-      <label class="mr-sm-2" for="commissionType">Type Of Commission:</label>
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect"  class="form-control"
-      formControlName="commissionType">
+      <label class="mr-sm-2">Type Of Commission:</label>
+      <select id="commissionCommissionType"
+      class="form-control"
+      formControlName="commissionType"
+      value="null"
+      >
         <option selected>Select...</option>
         <option value="Business">Business</option>
         <option value="Customer">Customer</option>
@@ -45,66 +55,65 @@
     </div>
     <div class="form-group">
     <label>Commissioner Name:</label>
-    <input type="text" 
+    <input id="commissionCommissioner"
+    type="text" 
     class="form-control" 
     formControlName="commissioner" 
     placeholder="Name of commissioner"
-    required/>
+    />
   </div>
-    <div class="form-group">
-      <!-- <p *ngIf="project.commission == true" >  -->
-      <label for="requirements">Requirements:</label>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="requirements" required
-        placeholder="List any known requirements here..."
 
-      />
-    <!-- </p> -->
-    </div>
-    </div>
     <div class="form-group">
-      <label for="startDate"> Start Date:</label>
+      <label for="requirements">Requirements:</label>
+      <input id="commissionRequirements"
+        type="text"
+        class="form-control"
+        formControlName="requirements"
+        placeholder="List any known requirements here..."
+        value="null"
+      />
+    </div>
+    </div> 
+    </div>
+    <!-- end commission -->
+
+    <div class="form-group">
+      <label> Start Date:</label>
       <input
         type="text"
         class="form-control"
-        required #dueDate ="ngModel"
-        [(ngModel)]="project.startDate"
-        name="startDate"
+        formControlName="startDate"
+        required
       />
     </div>
     <div class="form-group">
-      <label for="dueDate"> Due Date:</label>
+      <label> Due Date:</label>
       <input
         type="text"
         class="form-control"
-        required #dueDate ="ngModel"
-        [(ngModel)]="project.dueDate"
-        name="dueDate"
+        formControlName="dueDate"
+        required
       />
     </div>
 
     <div class="form-group" id="radioButtons">
-      <label for="materials">Does this Project require materials?</label>
+      <label>Does this Project require materials?</label>
       <input
       type="radio"
       class="form-control"
       id="yes"
       value="true"
-      required #materials ="ngModel"
-      [(ngModel)]="project.materials"
-      name="materials"
-    /> <label for="yes">Yes</label>
+      ng-true-value="'Yes'"
+      formControlName="materials"
+    /> <label>Yes</label>
     <input
       type="radio"
       class="form-control"
       id="no"
+      ng-false-value="'No"
       value="false"
-      required #materials ="ngModel"
-      [(ngModel)]="project.materials"
-      name="materials"
-    /><label for="no">No</label>
+      formControlName="materials"
+    /><label>No</label>
     </div>
 
     <div class="form-group">
@@ -112,66 +121,56 @@
       <input
         type="number"
         class="form-control"
-        required #onHandMaterialsCost ="ngModel"
-        [(ngModel)]="project.materialsCost"
-        name="materialsCost"
+        formControlName="materialsCost"
         min="0"
         placeholder="How much will materials cost?"
-
+        required
       />
     </div>
 
     <div class="form-group">
-      <label for="hourlyRate">Hourly Rate:</label>
+      <label>Hourly Rate:</label>
       <input
         type="number"
         class="form-control"
-        required #hourlyRate ="ngModel"
-        [(ngModel)]="project.hourlyRate"
-        name="hourlyRate"
+        formControlName="hourlyRate"
         min="0"
         placeholder="Your hourly rate..."
-
+        required
       />
     </div>
 
     <div class="form-group">
-      <label for="hoursLogged">Hours Logged:</label>
+      <label>Hours Logged:</label>
       <input
         type="number"
         class="form-control"
-        required #hoursLogged ="ngModel"
-        [(ngModel)]="project.hoursLogged"
-        name="hoursLogged"
+        formControlName="hoursLogged"
         min="0"
         placeholder="Hours logged"
-
+        required
       />
     </div>
 
     <div class="form-group">
-      <label for="description">Description:</label>
+      <label>Description:</label>
       <input
         type="text"
         class="form-control"
-        required #description ="ngModel"
-        [(ngModel)]="project.description"
-        name="description"
+        formControlName="description"
         placeholder="Brief description of project..."
-
+        required
       />
     </div>
 
     <div class="form-group">
-      <label for="notes">Notes:</label>
+      <label>Notes:</label>
       <input
         type="text"
         class="form-control"
-        required #notes ="ngModel"
-        [(ngModel)]="project.notes"
-        name="notes"
+        formControlName="notes"
         placeholder="Additional notes"
-
+        required
       />
     </div>
     <!-- <div class="form-group">
@@ -185,11 +184,11 @@
       />
     </div> -->
     <div class="form-group">
-      <label class="mr-sm-2" for="completion">Status:</label>
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect"  class="form-control"
-       #status ="ngModel"
-      [(ngModel)]="project.completion"
-      name="completion">
+      <label class="mr-sm-2">Status:</label>
+      <select 
+      class="form-control"
+      formControlName="completion"
+      required>
         <option selected>Select...</option>
         <option value="Started">Started</option>
         <option value="Completed">Completed</option>
@@ -200,25 +199,21 @@
 
 
       <div class="form-group" id="radioButtons">
-        <label for="sold"> Sold:</label>
+        <label> Sold:</label>
         <input
         type="radio"
         class="form-control"
         id="yes"
         value="true"
-        required #sold ="ngModel"
-        [(ngModel)]="project.sold"
-        name="sold"
+        formControlName="sold"
       /> <label for="yes">Yes</label>
       <input
         type="radio"
         class="form-control"
         id="no"
         value="false"
-        required #sold ="ngModel"
-        [(ngModel)]="project.sold"
-        name="sold"
-      /><label for="no">No</label>
+        formControlName="sold"
+      /><label>No</label>
       </div>
       <div class="col-12" id= "submit">
       <button type="submit" id ="submitbutton" class="btn btn-success">Submit</button>

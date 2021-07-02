@@ -30,7 +30,8 @@ import { UpdateProjectComponent } from './update-project/update-project.componen
 import {MatRippleModule} from '@angular/material/core';
 import { HomeComponent } from './home/home.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
-
+import { YesNoPipe } from './yes-no.pipe';
+import { ReplaceNullWithTextPipe } from './replace-null-with-text.pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,8 @@ import { ImageUploadComponent } from './image-upload/image-upload.component';
     UpdateProjectComponent,
     HomeComponent,
     ImageUploadComponent,
+    YesNoPipe,
+    ReplaceNullWithTextPipe
   ],
   imports: [
     RouterModule.forRoot([

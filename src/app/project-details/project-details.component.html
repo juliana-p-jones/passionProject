@@ -1,9 +1,16 @@
-<div class="container">
+<div class="container" >
     <h2>View Project:</h2>
+    <div id="titleInfo">
     <div class="row">
         <div class="column" id="field">Title:</div>
         <div class="column" id="values">{{ project.title }}</div>
     </div>
+    <div class="row">
+        <div class="column"id="field">Description:</div>
+        <div class="column"id="values">{{ project.description }}</div>
+    </div>
+    </div>
+    <div id="dates">
     <div class="row">
         <div class="column"id="field">Start Date: </div>
         <div class="column"id="values">{{ project.startDate}}</div>
@@ -12,9 +19,29 @@
         <div class="column"id="field">Due Date:</div>
         <div class="column"id="values">{{ project.dueDate }}</div>
     </div>
+    </div>
+    <div id="commissionFields">
+        <div class="row">
+            <div class="column"id="field">Is it a Commission?</div>
+            <div class="column"id="values">{{ project.commission.commission | yesNo }}</div>
+        </div>
+        <div class="row">
+            <div class="column"id="field">Type of Commission:</div>
+            <div class="column"id="values">{{ project.commission.commissionType | replaceNullWithText : 'N/A'}}</div>
+        </div>
+        <div class="row">
+            <div class="column"id="field">Commissioner:</div>
+            <div class="column"id="values">{{ project.commission.commissioner | replaceNullWithText : 'N/A'}}</div>
+        </div>
+        <div class="row">
+            <div class="column"id="field">Requirements:</div>
+            <div class="column"id="values">{{ project.commission.requirements | replaceNullWithText : 'N/A' }}</div>
+        </div>
+        </div>
+    <div id="costs">
     <div class="row">
         <div class="column"id="field">Materials:</div>
-        <div class="column"id="values">{{ project.materials }}</div>
+        <div class="column"id="values">{{ project.materials | yesNo}}</div>
     </div>
     <div class="row">
         <div class="column"id="field">Estimated Materials Cost:</div>
@@ -36,21 +63,20 @@
         <div class="column"id="field">Total Cost:</div>
         <div class="column"id="values">{{ totalCost() | currency }}</div>
     </div>
-    <div class="row">
-        <div class="column"id="field">Description:</div>
-        <div class="column"id="values">{{ project.description }}</div>
     </div>
     <div class="row">
         <div class="column"id="field">Notes:</div>
         <div class="column"id="values">{{ project.notes }}</div>
     </div>
+    <div id="status">
     <div class="row">
         <div class="column"id="field">Complete:</div>
         <div class="column"id="values">{{ project.completion }}</div>
     </div>
     <div class="row">
         <div class="column"id="field">Sold:</div>
-        <div class="column"id="values">{{ project.sold }}</div>
+        <div class="column"id="values">{{ project.sold | yesNo}}</div>
+    </div>    
     </div>
     <div>
 
