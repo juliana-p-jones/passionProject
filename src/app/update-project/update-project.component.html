@@ -1,197 +1,239 @@
 <div class="container">
   <h1>Update Project:</h1>
-    <form (ngSubmit)="onSubmit()" #projectForm="ngForm">
-      <div class="form-group">
-        <label for="title">Title:</label>
+  <form (ngSubmit)="onSubmit()" #projectForm="ngForm">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        class="form-control"
+        required #commission ="ngModel"
+         [(ngModel)]="project.title"
+          name="title"
+          placeholder="Name of project"
+
+      />
+    </div>
+    <div formGroupName="commission" class= "form-group">
+      <div class="form-group"id="radioButtons">
+        <label for="commission">Is this a Commission?</label>
         <input
-          type="text"
+          type="radio"
           class="form-control"
+          id="yes"
+          value="true"
           required #commission ="ngModel"
-           [(ngModel)]="project.title"
-            name="title"
-        />
-      </div>
-      Commission:
-      <div formGroupName="commission" class= "form-group">
-        <div class="form-group"id="radioButtons">
-          <label for="commission">Is this a Commission?</label>
-          <input
-            type="radio"
-            class="form-control"
-            id="yes"
-            value="true"
-            required #commission ="ngModel"
-            [(ngModel)]="project.commission"
-            name="commission"
-            ng-model="check1"
-          /> <label for="yes">Yes</label>
-          <input
-            type="radio"
-            class="form-control"
-            id="no"
-            value="false"
-            required #commission ="ngModel"
-            [(ngModel)]="project.commission"
-            name="commission"
-            ng-model="check2"
-          /><label for="no">No</label>
-        </div>
-        <div class="form-group">
-        <label>Type of Commission:</label>
-        <input type="text" class="form-control" formControlName="commissionType" required/>
-      </div>
-      <div class="form-group">
-        <label for="commissioner">Commissioner:</label>
+          [(ngModel)]="project.commission"
+          name="commission"
+          ng-model="check1"
+        /> <label for="yes">Yes</label>
         <input
-          type="text"
+          type="radio"
           class="form-control"
-          formControlName="commissioner" required
-        />
+          id="no"
+          value="false"
+          required #commission ="ngModel"
+          [(ngModel)]="project.commission"
+          name="commission"
+          ng-model="check2"
+        /><label for="no">No</label>
       </div>
-      <div class="form-group">
-        <label for="requirements">Requirements:</label>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="requirements" required
-        />
-      </div>
-      </div>
-      <div class="form-group">
-        <label for="startDate"> Start Date:</label>
-        
-        <input
-          type="text"
-          class="form-control"
-          required #dueDate ="ngModel"
-          [(ngModel)]="project.startDate"
-          name="startDate"
-        />
-      </div>
-      <div class="form-group">
-        <label for="dueDate"> Due Date:</label>
-        <input
-          type="text"
-          class="form-control"
-          required #dueDate ="ngModel"
-          [(ngModel)]="project.dueDate"
-          name="dueDate"
-        />
-      </div>
-
-      <div class="form-group" id="radioButtons">
-        <label for="materials">Does this Project require materials?</label>
-        <input
-        type="radio"
-        class="form-control"
-        id="yes"
-        value="true"
-        required #materials ="ngModel"
-        [(ngModel)]="project.materials"
-        name="materials"
-      /> <label for="yes">Yes</label>
-      <input
-        type="radio"
-        class="form-control"
-        id="no"
-        value="false"
-        required #materials ="ngModel"
-        [(ngModel)]="project.materials"
-        name="materials"
-      /><label for="no">No</label>
-      </div>
-
-      <div class="form-group">
-        <label for="materialsCost">Materials Cost:</label>
-        <input
-          type="number"
-          class="form-control"
-          required #onHandMaterialsCost ="ngModel"
-          [(ngModel)]="project.materialsCost"
-          name="materialsCost"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="hourlyRate">Hourly Rate:</label>
-        <input
-          type="number"
-          class="form-control"
-          required #hourlyRate ="ngModel"
-          [(ngModel)]="project.hourlyRate"
-          name="hourlyRate"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="hoursLogged">Hours Logged:</label>
-        <input
-          type="number"
-          class="form-control"
-          required #hoursLogged ="ngModel"
-          [(ngModel)]="project.hoursLogged"
-          name="hoursLogged"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="description">Description:</label>
-        <input
-          type="text"
-          class="form-control"
-          required #description ="ngModel"
-          [(ngModel)]="project.description"
-          name="description"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="notes">Notes:</label>
-        <input
-          type="text"
-          class="form-control"
-          required #notes ="ngModel"
-          [(ngModel)]="project.notes"
-          name="notes"
-        />
-      </div>
-      <div class="form-group">
-        <label for="completion">Status:</label>
-        <input
-          type="text"
-          class="form-control"
-          required #notes ="ngModel"
-          [(ngModel)]="project.completion"
-          name="completion"
-        />
-      </div>
-
-
-      <div class="form-group" id="radioButtons">
-        <label for="sold"> Sold:</label>
-        <input
-        type="radio"
-        class="form-control"
-        id="yes"
-        value="true"
-        required #sold ="ngModel"
-        [(ngModel)]="project.sold"
-        name="sold"
-      /> <label for="yes">Yes</label>
-      <input
-        type="radio"
-        class="form-control"
-        id="no"
-        value="false"
-        required #sold ="ngModel"
-        [(ngModel)]="project.sold"
-        name="sold"
-      /><label for="no">No</label>
-      </div>
-  
-      <button type="submit" class="btn btn-success">Submit</button>
-      <!-- [disabled]="!projectForm.form.valid" -->
-    </form>
-    <div><button class="btn btn-primary" (click)="backButton()">Back</button>
-
+    <div class="form-group">
+      <label class="mr-sm-2" for="commissionType">Type Of Commission:</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect"  class="form-control"
+     name="commissionType">
+        <option selected>Select...</option>
+        <option value="Business">Business</option>
+        <option value="Customer">Customer</option>
+        <option value="Family">Family</option>
+        <option value="Friend">Friend</option>
+        <option value="Not_Available">Not Available</option>
+      </select>
+    </div>
+    <div class="form-group">
+    <label>Commissioner Name:</label>
+    <input type="text" 
+    class="form-control" 
+    formControlName="commissioner" 
+    placeholder="Name of commissioner"
+    required/>
   </div>
+    <div class="form-group">
+      <!-- <p *ngIf="project.commission == true" >  -->
+      <label for="requirements">Requirements:</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="requirements" required
+        placeholder="List any known requirements here..."
+
+      />
+    <!-- </p> -->
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="startDate"> Start Date:</label>
+      
+      <input
+        type="text"
+        class="form-control"
+        required #dueDate ="ngModel"
+        [(ngModel)]="project.startDate"
+        name="startDate"
+      />
+    </div>
+    <div class="form-group">
+      <label for="dueDate"> Due Date:</label>
+      <input
+        type="text"
+        class="form-control"
+        required #dueDate ="ngModel"
+        [(ngModel)]="project.dueDate"
+        name="dueDate"
+      />
+    </div>
+
+    <div class="form-group" id="radioButtons">
+      <label for="materials">Does this Project require materials?</label>
+      <input
+      type="radio"
+      class="form-control"
+      id="yes"
+      value="true"
+      required #materials ="ngModel"
+      [(ngModel)]="project.materials"
+      name="materials"
+    /> <label for="yes">Yes</label>
+    <input
+      type="radio"
+      class="form-control"
+      id="no"
+      value="false"
+      required #materials ="ngModel"
+      [(ngModel)]="project.materials"
+      name="materials"
+    /><label for="no">No</label>
+    </div>
+
+    <div class="form-group">
+      <label for="materialsCost">Materials Cost:</label>
+      <input
+        type="number"
+        class="form-control"
+        required #onHandMaterialsCost ="ngModel"
+        [(ngModel)]="project.materialsCost"
+        name="materialsCost"
+        min="0"
+        placeholder="How much will materials cost?"
+
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="hourlyRate">Hourly Rate:</label>
+      <input
+        type="number"
+        class="form-control"
+        required #hourlyRate ="ngModel"
+        [(ngModel)]="project.hourlyRate"
+        name="hourlyRate"
+        min="0"
+        placeholder="Your hourly rate..."
+
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="hoursLogged">Hours Logged:</label>
+      <input
+        type="number"
+        class="form-control"
+        required #hoursLogged ="ngModel"
+        [(ngModel)]="project.hoursLogged"
+        name="hoursLogged"
+        min="0"
+        placeholder="Hours logged"
+
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        class="form-control"
+        required #description ="ngModel"
+        [(ngModel)]="project.description"
+        name="description"
+        placeholder="Brief description of project..."
+
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Notes:</label>
+      <input
+        type="text"
+        class="form-control"
+        required #notes ="ngModel"
+        [(ngModel)]="project.notes"
+        name="notes"
+        placeholder="Additional notes"
+
+      />
+    </div>
+    <!-- <div class="form-group">
+      <label for="completion">Status:</label>
+      <input
+        type="text"
+        class="form-control"
+        required #notes ="ngModel"
+        [(ngModel)]="project.completion"
+        name="completion"
+      />
+    </div> -->
+    <div class="form-group">
+      <label class="mr-sm-2" for="completion">Status:</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect"  class="form-control"
+       #status ="ngModel"
+      [(ngModel)]="project.completion"
+      name="completion">
+        <option selected>Select...</option>
+        <option value="Started">Started</option>
+        <option value="Completed">Completed</option>
+        <option value="WIP">WIP</option>
+        <option value="Paused">Paused</option>
+      </select>
+    </div>
+
+
+    <div class="form-group" id="radioButtons">
+      <label for="sold"> Sold:</label>
+      <input
+      type="radio"
+      class="form-control"
+      id="yes"
+      value="true"
+      required #sold ="ngModel"
+      [(ngModel)]="project.sold"
+      name="sold"
+    /> <label for="yes">Yes</label>
+    <input
+      type="radio"
+      class="form-control"
+      id="no"
+      value="false"
+      required #sold ="ngModel"
+      [(ngModel)]="project.sold"
+      name="sold"
+    /><label for="no">No</label>
+    </div>
+    <div class="col-12" id= "submit">
+    <button type="submit" id ="submitbutton" class="btn btn-success">Submit</button>
+    <!-- [disabled]="!projectForm.form.valid" -->
+    </div>
+  </form>
+  <div class="col-12" id="back">
+
+  <button class="btn btn-primary" id="backbutton" (click)="backButton()">Back</button>
+</div>
+</div>
