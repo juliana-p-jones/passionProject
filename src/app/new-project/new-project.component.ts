@@ -85,4 +85,5 @@ collapseCommission(){
     var x = document.getElementById("commissionFields");
     x!.style.display = "block";
   }
+
 }

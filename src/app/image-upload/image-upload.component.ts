@@ -1,5 +1,6 @@
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Project } from '../project';
 
 @Component({
   selector: 'app-image-upload',
@@ -14,6 +15,7 @@ export class ImageUploadComponent {
   retrieveResonse: any;
   message!: string;
   imageName: any;
+  project!: Project;
   //Gets called when the user selects an image
   public onFileChanged(event: any) {
     //Select File
@@ -26,7 +28,8 @@ export class ImageUploadComponent {
     //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
     const uploadImageData = new FormData();
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
-  
+    this.project.image= this.selectedFile.name;
+
     //Make a call to the Spring Boot Application to save the image
     this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
       .subscribe((response) => {
@@ -50,4 +53,7 @@ export class ImageUploadComponent {
         }
       );
   }
+  // setImageToProject(){
+  //   this.project.image = this.getImage();
+  // }
 }

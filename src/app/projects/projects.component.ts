@@ -12,7 +12,8 @@ export class ProjectsComponent implements OnInit {
 
   projects!: Project[];
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private router: Router,
     private projectService: ProjectServiceService){ }
 
